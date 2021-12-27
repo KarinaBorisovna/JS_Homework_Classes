@@ -131,7 +131,9 @@ Library.prototype.giveBookByName = function(bookName) {
 
     for (let i = 0; i < this.books.length; i++) {
         if (this.books[i].name === this.bookName) {
-            result = this.books.pop(this.books[i]);
+            let item = this.books.indexOf(this.books[i]);
+            result = this.books.splice(item, 1);
+            console.log(result);
         } 
     }
 
@@ -171,7 +173,7 @@ library.addBook(new Magazine("Мурзилка", 1924, 60));
 // console.log(library.findBookBy("releaseDate", 1924)); //"Мурзилка"
 
 // console.log("Количество книг до выдачи: " + library.books.length); //Количество книг до выдачи: 4
-// console.log(library.giveBookByName("Машина времени"));
+console.log(library.giveBookByName("Машина времени"));
 // console.log("Количество книг после выдачи: " + library.books.length); //Количество книг после выдачи: 3
 
 
